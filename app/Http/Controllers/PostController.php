@@ -29,7 +29,8 @@ class PostController extends Controller
           'category_id' => request('category_id')
         ]);
 
-        return redirect()->route('post.index');
+        return redirect()->route('post.index')->withInfo('Post Aded');//->with('success','Post aded');
+        //->with('success','Post aded');  untuk membuat alert jika berhasil membuat post
     }
 
     // ===== Edit
@@ -49,14 +50,14 @@ class PostController extends Controller
         'content'     => request('content')
       ]);
 
-      return redirect()->route('post.index');
+      return redirect()->route('post.index')->withSuccess('Post Changed');
     }
 
     // Delete
     public function destroy(Post $post){
 
       $post->delete();
-      return redirect()->route('post.index');
+      return redirect()->route('post.index')->withDanger('Post Deleted');
 
     }
 }

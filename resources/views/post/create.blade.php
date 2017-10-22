@@ -7,7 +7,7 @@
     {{ csrf_field() }}
     <div class="from-group">
       <label for="">Title</label>
-      <input type="text" class="form-control" name="title" value="" placeholder="Post title">
+      <input type="text" class="form-control" name="title" placeholder="Post title">
     </div><br>
     <div class="from-group">
       <label for="">Category</label>

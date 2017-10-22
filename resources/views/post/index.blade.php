@@ -7,7 +7,7 @@
               @foreach ($posts as $post)
                 <div class="panel panel-default">
                     <div class="panel-heading">
-                      {{ $post->title }}
+                    {{ $post->title }}
                       <div class="pull-right">
                         <form class="" action="{{ route('post.destroy',$post->id) }}" method="post">
                           {{ csrf_field() }}
@@ -20,6 +20,7 @@
 
                     <div class="panel-body">
                       <p>{{ $post->content }}</p>
+                      <a href="{{route('post.edit',$post->id) }}">edit</a>
                     </div>
                 </div>
               @endforeach
