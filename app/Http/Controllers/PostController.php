@@ -10,7 +10,7 @@ use App\Category;
 class PostController extends Controller
 {
   public function index(){
-    $posts = Post::all();
+    $posts = Post::orderBy('created_at', 'desc')->get();//all();
 
     return view('post.index',compact('posts'));
   }
@@ -34,7 +34,7 @@ class PostController extends Controller
 
     // ===== Edit
     public function edit(Post $post){//($id){
-      //$post = Post::find($id);
+      //$post = Post::find($id); di gunakan jika tidak menggunakan data binding
       $categories = Category::all();
 
       return view('post.edit', compact('post','categories'));
@@ -50,5 +50,13 @@ class PostController extends Controller
       ]);
 
       return redirect()->route('post.index');
+    }
+
+    // Delete
+    public function destroy(Post $post){
+
+      $post->delete();
+      return redirect()->route('post.index');
+
     }
 }

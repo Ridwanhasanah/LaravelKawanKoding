@@ -32,4 +32,6 @@ Route::post('/post/create','PostController@store')->name('post.store'); //->name
 Route::get('/post/{post}/edit','PostController@edit')->name('post.edit'); //{id}/edit','PostController@edit')->name('post.edit');
 Route::patch('/post/{post}/update','PostController@update')->name('post.update');//{id}/update','PostController@update')->name('post.update');
 
+// Delete
+Route::delete('post/{post}/delete','PostController@destroy')->name('post.destroy');//{id}/delete','PostController@destroy')->name('post.destroy');
 // ========= POST Start End=========
