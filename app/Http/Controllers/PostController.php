@@ -7,8 +7,8 @@ use App\Post;
 use App\Category;
 
 
-class PostController extends Controller
-{
+class PostController extends Controller{
+
   public function index(){
     $posts = Post::orderBy('created_at', 'desc')->get();//all();
 
@@ -59,5 +59,9 @@ class PostController extends Controller
       $post->delete();
       return redirect()->route('post.index')->withDanger('Post Deleted');
 
+    }
+
+    public function show(Post $post){
+      return view('post.show',compact('post'));
     }
 }

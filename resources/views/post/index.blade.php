@@ -7,7 +7,7 @@
               @foreach ($posts as $post)
                 <div class="panel panel-default">
                     <div class="panel-heading">
-                    {{ $post->title }}
+                    <a href="{{ route('post.show',$post->id)}}">{{ $post->title }}</a>
                       <div class="pull-right">
                         <form class="" action="{{ route('post.destroy',$post->id) }}" method="post">
                           {{ csrf_field() }}
@@ -19,7 +19,7 @@
                     </div>
 
                     <div class="panel-body">
-                      <p>{{ $post->content }}</p>
+                      <p>{{ str_limit($post->content,100,' ...') }}</p>
                       <a href="{{route('post.edit',$post->id) }}">edit</a>
                     </div>
                 </div>

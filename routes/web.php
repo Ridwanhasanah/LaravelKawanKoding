@@ -34,4 +34,8 @@ Route::patch('/post/{post}/update','PostController@update')->name('post.update')
 
 // Delete
 Route::delete('post/{post}/delete','PostController@destroy')->name('post.destroy');//{id}/delete','PostController@destroy')->name('post.destroy');
+
+// Detail
+Route::get('/post/{post}','PostController@show')->name('post.show'); //{id}/edit','PostController@edit')->name('post.edit');
+
 // ========= POST Start End=========
