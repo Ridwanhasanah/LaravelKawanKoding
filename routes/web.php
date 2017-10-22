@@ -28,5 +28,8 @@ Route::get('/post','PostController@index')->name('post.index');
 Route::get('/post/create','PostController@create')->name('post.create'); //->name('post.create') adalah nama alias
 Route::post('/post/create','PostController@store')->name('post.store'); //->name('post.create') adalah nama alias
 
+// ===== Edit
+Route::get('/post/{post}/edit','PostController@edit')->name('post.edit'); //{id}/edit','PostController@edit')->name('post.edit');
+Route::patch('/post/{post}/update','PostController@update')->name('post.update');//{id}/update','PostController@update')->name('post.update');
 
 // ========= POST Start End=========
