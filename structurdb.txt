@@ -1,4 +1,4 @@
--user (email, password)
-- category (id, name , slug)
--post (id, categoy_id, title, content)
+-user (email, password) X
+- category (id, name , slug) X
+-post (id, categoy_id, title, content) X
 -comment (id, post_id, message, user_id)

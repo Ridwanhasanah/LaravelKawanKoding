@@ -18,3 +18,15 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+// ========= POST Start =========
+
+//=====Index
+Route::get('/post','PostController@index')->name('post.index');
+
+//===== Create
+Route::get('/post/create','PostController@create')->name('post.create'); //->name('post.create') adalah nama alias
+Route::post('/post/create','PostController@store')->name('post.store'); //->name('post.create') adalah nama alias
+
+
+// ========= POST Start End=========
