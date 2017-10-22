@@ -19,7 +19,14 @@
                 <label for="">Category</label>
                 <select class="form-control" name="category_id">
                   @foreach( $categories as $category )
-                    <option value="{{ $category->id}}">{{ $category->name }}</option>
+                    <option
+                    value="{{ $category->id}}"
+                    @if ($category->id === $post->category_id)
+                      selected
+                    @endif
+                    >
+                      {{ $category->name }}
+                    </option>
                   @endforeach
                 </select>
               </div>
