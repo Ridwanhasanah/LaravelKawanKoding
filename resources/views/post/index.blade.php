@@ -20,10 +20,12 @@
 
                     <div class="panel-body">
                       <p>{{ str_limit($post->content,100,' ...') }}</p>
-                      <a href="{{route('post.edit',$post->id) }}">edit</a>
+                      <a href="{{route('post.edit',$post->id) }}">edit</a> | <i>{{ $post->created_at->diffForHumans()}}</i>
                     </div>
                 </div>
               @endforeach
+
+              {!! $posts->render() !!}
           </div>
       </div>
   </div>
