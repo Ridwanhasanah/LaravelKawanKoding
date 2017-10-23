@@ -38,4 +38,7 @@ Route::delete('post/{post}/delete','PostController@destroy')->name('post.destroy
 // Detail
 Route::get('/post/{post}','PostController@show')->name('post.show'); //{id}/edit','PostController@edit')->name('post.edit');
 
-// ========= POST Start End=========
+// Comment
+Route::post('post/{post}/comment','PostCommentController@store')->name('post.comment.store');//{id}/delete','PostController@destroy')->name('post.destroy');
+
+// ========= POST End=========
